@@ -1,0 +1,23 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<app-nav2 *ngIf="sh"></app-nav2>
+<div class="col-md-6 col-md-offset-3">
+    <h1>Hi {{currentUser.firstName}}!</h1>
+    <p>You're logged in!!</p>
+    <h3>All registered users:</h3>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.firstName}} {{user.lastName}})
+            - <a (click)="deleteUser(user.id)" style="color:blue;cursor:pointer;">Delete</a>
+        </li>
+    </ul>
+    <p><a [routerLink]="['/page']">Logout</a></p>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div class="text-center">
+<button (click)="onclick()" class="btn btn-primary" style="margin-left: auto;margin-right: auto;position:absolute;text-align:center;"><i class="fa fa-microphone" aria-hidden="true"></i>&nbsp;&nbsp;Talk</button>
+<h3 class="content"></h3>
+</div>
+</div>
+</div>
